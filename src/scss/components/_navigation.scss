@@ -1,0 +1,131 @@
+.nav-comp {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    font-family: Inter, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #6b6980;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(81, 76, 76);
+  }
+
+  &.active {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 220px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 10px;
+
+    li {
+      border-bottom: 1px solid #e5e5e5;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  @media (width >= 768px) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: auto;
+    padding: 0 180px;
+    background: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 72px 0 0 0; // replace with your actual header height
+  display: none;
+
+  &.active {
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+  }
+
+  @media (width >= 768px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    font-family: Inter, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #6b6980;
+    text-decoration: none;
+
+    &:hover {
+      color: rgb(81, 76, 76);
+    }
+  }
+
+  &__button {
+    padding: 12px 100px;
+    margin-top: 15rem;
+    font-family: Inter, sans-serif;
+    font-size: medium;
+    font-weight: 290;
+    color: white;
+    cursor: pointer;
+    background: #5b4be1;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+.header__ham-btn {
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+
+  img {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

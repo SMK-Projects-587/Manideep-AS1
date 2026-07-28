@@ -3,10 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
-    <title>Project</title>
+    <title>Verse</title>
+
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Inter Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <header class="header">
+      <div class="header-left">
+        <a href="#" class="logo">
+          <img src="assets/logo.svg" alt="Verse Logo" />
+          <span>Verse</span>
+        </a>
+
+        <ul class="nav-comp" id="nav-menu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </div>
+
+      <div class="header-right">
+        <button class="primary-btn">Get inspired</button>
+
+        <button class="header__menu-btn" id="menu-btn" aria-label="Toggle navigation">
+          <img id="menu-icon" src="assets/ham.svg" alt="Menu" width="24" height="24" />
+        </button>
+      </div>
+    </header>
+    <nav class="mobile-menu" id="mobile-menu">
+      <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+          <a href="#" class="mobile-menu__link">Home</a>
+        </li>
+
+        <li class="mobile-menu__item">
+          <a href="#" class="mobile-menu__link">Explore</a>
+        </li>
+
+        <li class="mobile-menu__item">
+          <a href="#" class="mobile-menu__link">About</a>
+        </li>
+      </ul>
+
+      <button class="mobile-menu__button">Get inspired</button>
+    </nav>
+
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

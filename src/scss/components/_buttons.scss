@@ -1,0 +1,21 @@
+.primary-btn {
+  display: none;
+  padding: 12px 29px;
+  font-family: Inter, sans-serif;
+  font-weight: 290;
+  color: white;
+  cursor: pointer;
+  background: #5b4be1;
+  border: none;
+  border-radius: 10px;
+
+  &:hover {
+    background: #4638be;
+  }
+
+  @media (width >= 768px) {
+    display: block;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
