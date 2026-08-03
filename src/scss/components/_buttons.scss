@@ -25,13 +25,3 @@
     background-color: $color-primary-hover;
   }
 }
-
-.button--secondary {
-  color: $color-text-primary;
-  background-color: $color-surface;
-  border: 1px solid $color-border;
-
-  &:hover {
-    background-color: $color-surface-hover;
-  }
-}
