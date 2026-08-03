@@ -18,3 +18,12 @@ menuBtn.addEventListener('click', () => {
     menuIcon.alt = 'Menu';
   }
 });
+
+// Close mobile menu when switching to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 768) {
+    mobileMenu.classList.remove('active');
+    menuIcon.src = hamIcon;
+    menuIcon.alt = 'Menu';
+  }
+});

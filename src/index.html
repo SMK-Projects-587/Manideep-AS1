@@ -3,57 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Verse</title>
 
-    <!-- Preconnect for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Inter Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="header">
-      <div class="header-left">
-        <a href="#" class="logo">
-          <img src="assets/logo.svg" alt="Verse Logo" />
-          <span>Verse</span>
+      <div class="header__content">
+        <a href="index.html" class="header__logo" aria-label="Verse Home">
+          <img class="header__logo-icon" src="./assets/logo.svg" alt="" />
+
+          <span class="header__logo-text"> Verse </span>
         </a>
 
-        <ul class="nav-comp" id="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
+        <nav class="header__navigation" aria-label="Primary navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link"> Home </a>
+            </li>
+
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link"> Explore </a>
+            </li>
+
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link"> About </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      <div class="header-right">
-        <button class="primary-btn">Get inspired</button>
+      <div class="header__actions">
+        <button class="button button--primary header__cta" type="button">Get inspired</button>
 
-        <button class="header__menu-btn" id="menu-btn" aria-label="Toggle navigation">
-          <img id="menu-icon" src="assets/ham.svg" alt="Menu" width="24" height="24" />
+        <button
+          class="header__menu-button"
+          id="menu-btn"
+          type="button"
+          aria-label="Open navigation"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <img class="header__menu-icon" id="menu-icon" src="./assets/ham.svg" alt="" />
         </button>
       </div>
     </header>
-    <nav class="mobile-menu" id="mobile-menu">
-      <ul class="mobile-menu__list">
-        <li class="mobile-menu__item">
-          <a href="#" class="mobile-menu__link">Home</a>
+
+    <nav class="mobile-navigation" id="mobile-menu" aria-label="Mobile navigation">
+      <ul class="mobile-navigation__list">
+        <li class="mobile-navigation__item">
+          <a href="#" class="mobile-navigation__link"> Home </a>
         </li>
 
-        <li class="mobile-menu__item">
-          <a href="#" class="mobile-menu__link">Explore</a>
+        <li class="mobile-navigation__item">
+          <a href="#" class="mobile-navigation__link"> Explore </a>
         </li>
 
-        <li class="mobile-menu__item">
-          <a href="#" class="mobile-menu__link">About</a>
+        <li class="mobile-navigation__item">
+          <a href="#" class="mobile-navigation__link"> About </a>
         </li>
       </ul>
 
-      <button class="mobile-menu__button">Get inspired</button>
+      <button class="button button--primary mobile-navigation__button" type="button">
+        Get inspired
+      </button>
     </nav>
 
     <script type="module" src="./js/main.js"></script>

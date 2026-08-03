@@ -1,27 +1,67 @@
+@use '../abstracts/variables' as *;
+
 .header {
-  position: relative; // or sticky/fixed, whatever you're using
-  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  border: 2px solid rgb(226, 219, 219);
+  width: 100%;
+  min-height: $header-height;
+  padding: 0 $space-xl;
+  background-color: $color-white;
+  border: 1px solid $color-border;
+}
 
-  @media (width >= 768px) {
-    padding: 16px 60px;
+.header__content {
+  display: flex;
+  gap: $space-xl;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  gap: $space-sm;
+  align-items: center;
+  color: $color-text-primary;
+}
+
+.header__logo-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.header__logo-text {
+  font-family: $font-heading;
+  font-size: $font-size-lg;
+  line-height: 1;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin-left: 16rem;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
   }
 }
 
-.header-left {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-  width: 100%;
+.header__menu-icon {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
-.header__menu-btn {
-  img {
-    width: 24px;
-    height: 24px;
+.header__cta {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: inline-flex;
   }
 }

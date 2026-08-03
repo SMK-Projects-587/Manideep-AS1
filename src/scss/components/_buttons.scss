@@ -1,21 +1,37 @@
-.primary-btn {
-  display: none;
-  padding: 12px 29px;
-  font-family: Inter, sans-serif;
-  font-weight: 290;
-  color: white;
-  cursor: pointer;
-  background: #5b4be1;
-  border: none;
-  border-radius: 10px;
+@use '../abstracts/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $button-padding-y $button-padding-x;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: $radius-md;
+  transition:
+    background-color $transition-default,
+    color $transition-default,
+    border-color $transition-default;
+}
+
+.button--primary {
+  color: $color-white;
+  background-color: $color-primary;
 
   &:hover {
-    background: #4638be;
+    background-color: $color-primary-hover;
   }
+}
 
-  @media (width >= 768px) {
-    display: block;
-    font-size: 12px;
-    white-space: nowrap;
+.button--secondary {
+  color: $color-text-primary;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+
+  &:hover {
+    background-color: $color-surface-hover;
   }
 }
