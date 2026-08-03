@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .header {
   display: flex;
@@ -9,61 +10,61 @@
   padding: 0 $space-xl;
   background-color: $color-white;
   border: 1px solid $color-border;
-}
 
-.header__content {
-  display: flex;
-  gap: $space-xl;
-  align-items: center;
-  margin-left: 2.5rem;
-}
-
-.header__logo {
-  display: flex;
-  gap: $space-sm;
-  align-items: center;
-  color: $color-text-primary;
-}
-
-.header__logo-icon {
-  width: 2.2rem;
-  height: 2.2rem;
-}
-
-.header__logo-text {
-  font-family: $font-heading;
-  font-size: $font-size-lg;
-  line-height: 1;
-}
-
-.header__actions {
-  display: flex;
-  align-items: center;
-  margin-right: 2.5rem;
-}
-
-.header__menu-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.4rem;
-  height: 4.4rem;
-  margin-left: 16rem;
-
-  @media (min-width: $breakpoint-md) {
-    display: none;
+  &__content {
+    display: flex;
+    gap: $space-xl;
+    align-items: center;
+    margin-left: 2.5rem;
   }
-}
 
-.header__menu-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-}
+  &__logo {
+    display: flex;
+    gap: $space-sm;
+    align-items: center;
+    color: $color-text-primary;
+  }
 
-.header__cta {
-  display: none;
+  &__logo-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
 
-  @media (min-width: $breakpoint-md) {
-    display: inline-flex;
+  &__logo-text {
+    font-family: $font-heading;
+    font-size: $font-size-lg;
+    line-height: 1;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+  }
+
+  &__menu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin-left: 16rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &__cta {
+    display: none;
+
+    @include desktop {
+      display: inline-flex;
+    }
   }
 }

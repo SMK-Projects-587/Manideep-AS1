@@ -1,35 +1,42 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 /* ===========================
    Desktop Navigation
 =========================== */
 
-.header__navigation {
-  display: none;
-  margin-left: 16rem;
+.header {
+  &__navigation {
+    display: none;
+    margin-left: 16rem;
 
-  @media (min-width: $breakpoint-md) {
-    display: block;
+    @include desktop {
+      display: block;
+    }
   }
-}
 
-.header__nav-list {
-  display: flex;
-  gap: $space-lg;
-  align-items: center;
-}
+  &__nav-list {
+    display: flex;
+    gap: $space-lg;
+    align-items: center;
+  }
 
-.header__nav-link {
-  display: block;
-  font-family: $font-body;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-regular;
-  line-height: 1;
-  color: $color-text-secondary;
-  transition: color $transition-default;
+  &__nav-item {
+    list-style: none;
+  }
 
-  &:hover {
-    color: $color-text-primary;
+  &__nav-link {
+    display: block;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-regular;
+    line-height: 1;
+    color: $color-text-secondary;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-text-primary;
+    }
   }
 }
 
@@ -51,36 +58,40 @@
     justify-content: center;
   }
 
-  @media (min-width: $breakpoint-md) {
+  @include desktop {
     display: none;
+
+    &.active {
+      display: none;
+    }
   }
-}
 
-.mobile-navigation__list {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  text-align: center;
-}
-
-.mobile-navigation__item {
-  list-style: none;
-}
-
-.mobile-navigation__link {
-  display: block;
-  font-family: $font-body;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-medium;
-  line-height: 1;
-  color: $color-text-secondary;
-  transition: color $transition-default;
-
-  &:hover {
-    color: $color-text-primary;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    text-align: center;
   }
-}
 
-.mobile-navigation__button {
-  margin-top: $space-xl;
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    color: $color-text-secondary;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+
+  &__button {
+    margin-top: $space-xl;
+  }
 }
