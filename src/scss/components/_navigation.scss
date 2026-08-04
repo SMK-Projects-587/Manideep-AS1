@@ -2,40 +2,40 @@
 @use '../abstracts/mixins' as *;
 
 /* ===========================
-   Desktop Navigation
+   Header Navigation
 =========================== */
 
 .header {
   &__navigation {
     display: none;
-    margin-left: 16rem;
 
     @include desktop {
       display: block;
     }
-  }
 
-  &__nav-list {
-    display: flex;
-    gap: $space-lg;
-    align-items: center;
-  }
+    &-list {
+      display: flex;
+      gap: $space-lg;
+      align-items: center;
+      margin-left: 16rem;
+    }
 
-  &__nav-item {
-    list-style: none;
-  }
+    &-item {
+      list-style: none;
+    }
 
-  &__nav-link {
-    display: block;
-    font-family: $font-body;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-regular;
-    line-height: 1;
-    color: $color-text-secondary;
-    transition: color $transition-default;
+    &-link {
+      display: block;
+      font-family: $font-body;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-regular;
+      line-height: 1;
+      color: $color-text-secondary;
+      transition: color $transition-default;
 
-    &:hover {
-      color: $color-text-primary;
+      &:hover {
+        color: $color-text-primary;
+      }
     }
   }
 }

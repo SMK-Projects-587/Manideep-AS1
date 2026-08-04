@@ -7,15 +7,21 @@
   justify-content: space-between;
   width: 100%;
   min-height: $header-height;
-  padding: 0 $space-xl;
+  padding: 0 $space-lg;
   background-color: $color-white;
   border: 1px solid $color-border;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: $header-height;
+  }
 
   &__content {
     display: flex;
     gap: $space-xl;
     align-items: center;
-    margin-left: 2.5rem;
   }
 
   &__logo {
@@ -39,7 +45,6 @@
   &__actions {
     display: flex;
     align-items: center;
-    margin-right: 2.5rem;
   }
 
   &__menu-button {
@@ -48,7 +53,6 @@
     justify-content: center;
     width: 4.4rem;
     height: 4.4rem;
-    margin-left: 16rem;
 
     @include desktop {
       display: none;
