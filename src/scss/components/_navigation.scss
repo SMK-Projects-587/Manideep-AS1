@@ -1,0 +1,97 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* ===========================
+   Header Navigation
+=========================== */
+
+.header {
+  &__navigation {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+
+    &-list {
+      display: flex;
+      gap: $space-lg;
+      align-items: center;
+      margin-left: 16rem;
+    }
+
+    &-item {
+      list-style: none;
+    }
+
+    &-link {
+      display: block;
+      font-family: $font-body;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-regular;
+      line-height: 1;
+      color: $color-text-secondary;
+      transition: color $transition-default;
+
+      &:hover {
+        color: $color-text-primary;
+      }
+    }
+  }
+}
+
+/* ===========================
+   Mobile Navigation
+=========================== */
+
+.mobile-navigation {
+  position: fixed;
+  inset: $header-height 0 0;
+  display: none;
+  background-color: $color-surface;
+
+  &.active {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include desktop {
+    display: none;
+
+    &.active {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+    text-align: center;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    font-family: $font-body;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    line-height: 1;
+    color: $color-text-secondary;
+    transition: color $transition-default;
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+
+  &__button {
+    margin-top: $space-xl;
+  }
+}

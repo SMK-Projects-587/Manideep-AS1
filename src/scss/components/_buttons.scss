@@ -1,0 +1,27 @@
+@use '../abstracts/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $button-padding-y $button-padding-x;
+  font-family: $font-body;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: $radius-md;
+  transition:
+    background-color $transition-default,
+    color $transition-default,
+    border-color $transition-default;
+}
+
+.button--primary {
+  color: $color-white;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary-hover;
+  }
+}
