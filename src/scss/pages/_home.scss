@@ -1,0 +1,126 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.hero {
+  padding: 0;
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+
+  .container {
+    @include flex(column);
+
+    padding-inline: $space-sm;
+
+    @include desktop {
+      @include flex(row, space-between, center, $space-xl);
+
+      padding-block: 4rem;
+      padding-inline: 0;
+    }
+  }
+
+  &__content {
+    @include flex(column, flex-start, stretch, $space-sm);
+
+    padding: $space-sm;
+    margin-top: 1rem;
+    margin-left: 0.8rem;
+
+    @include desktop {
+      flex: 1;
+      gap: $space-md;
+      min-width: 0;
+    }
+  }
+
+  &__eyebrow {
+    @include font($font-body, $font-size-sm, $font-weight-regular, normal, $color-primary);
+
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+  }
+
+  &__title {
+    @include font($font-heading, 3.2rem, $font-weight-regular, 1.1, $color-text-primary);
+
+    word-break: normal;
+    overflow-wrap: normal;
+
+    @include desktop {
+      max-width: 10ch;
+      font-size: 5.2rem;
+    }
+  }
+
+  &__description {
+    max-width: 33ch;
+    font-family: $font-body;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    color: $color-text-secondary;
+
+    @include desktop {
+      max-width: 33ch;
+    }
+  }
+
+  &__button {
+    padding: 1.2rem 2.4rem;
+    font-weight: 300;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-lg;
+    margin-top: 1rem;
+  }
+
+  &__card {
+    @include flex(column, flex-start, stretch, $space-lg);
+
+    padding: $space-lg;
+    margin-bottom: $space-md;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 2rem;
+
+    @include desktop {
+      flex-shrink: 0;
+      width: 50rem;
+      height: 23.6rem;
+    }
+
+    &-content {
+      @include flex(column, flex-start, stretch, 4rem);
+
+      @include desktop {
+        font-size: $font-size-lg;
+      }
+    }
+  }
+
+  &__quote-icon {
+    display: none;
+
+    @include desktop {
+      display: block;
+      font-size: $font-size-lg;
+      color: #f1effd;
+    }
+  }
+
+  &__quote {
+    @include font($font-heading, $font-size-lg, $font-weight-medium, 1.25, $color-text-primary);
+
+    @include desktop {
+      font-size: 2.7rem;
+    }
+  }
+
+  &__author {
+    @include font($font-body, $font-size-sm, $font-weight-regular, normal, $color-text-secondary);
+
+    font-style: normal;
+  }
+}

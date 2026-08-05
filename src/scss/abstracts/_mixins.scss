@@ -5,3 +5,21 @@
     @content;
   }
 }
+
+// Flex
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Font
+@mixin font($family, $size, $weight: $font-weight-regular, $line-height: normal, $color: inherit) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
