@@ -1,5 +1,5 @@
-@use './abstracts/variables' as *;
-@use './abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .hero {
   padding: 0;
@@ -7,24 +7,21 @@
   border: 1px solid $color-border;
 
   .container {
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
+
     padding-inline: $space-sm;
 
     @include desktop {
-      flex-direction: row;
-      gap: $space-xl;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(row, space-between, center, $space-xl);
+
       padding-block: 4rem;
       padding-inline: 0;
     }
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: $space-sm;
+    @include flex(column, flex-start, stretch, $space-sm);
+
     padding: $space-sm;
     margin-top: 1rem;
     margin-left: 0.8rem;
@@ -37,19 +34,15 @@
   }
 
   &__eyebrow {
-    font-family: $font-body;
-    font-size: $font-size-sm;
-    font-weight: $font-weight-regular;
-    color: $color-primary;
+    @include font($font-body, $font-size-sm, $font-weight-regular, normal, $color-primary);
+
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.06rem;
   }
 
   &__title {
-    font-family: $font-heading;
-    font-size: 3.1rem;
-    font-weight: $font-weight-regular;
-    line-height: 1.1;
+    @include font($font-heading, 3.2rem, $font-weight-regular, 1.1, $color-text-primary);
+
     word-break: normal;
     overflow-wrap: normal;
 
@@ -73,7 +66,7 @@
 
   &__button {
     padding: 1.2rem 2.4rem;
-    font-weight: 100;
+    font-weight: 300;
   }
 
   &__actions {
@@ -84,14 +77,13 @@
   }
 
   &__card {
-    display: flex;
-    flex-direction: column;
-    gap: $space-lg;
+    @include flex(column, flex-start, stretch, $space-lg);
+
     padding: $space-lg;
     margin-bottom: $space-md;
     background-color: $color-white;
-    border: 1px solid #ebe7f5;
-    border-radius: $radius-xl;
+    border: 1px solid $color-border;
+    border-radius: 2rem;
 
     @include desktop {
       flex-shrink: 0;
@@ -100,9 +92,7 @@
     }
 
     &-content {
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
+      @include flex(column, flex-start, stretch, 4rem);
 
       @include desktop {
         font-size: $font-size-lg;
@@ -121,11 +111,7 @@
   }
 
   &__quote {
-    font-family: $font-heading;
-    font-size: $font-size-lg;
-    font-weight: $font-weight-medium;
-    line-height: 1.25;
-    color: $color-text-primary;
+    @include font($font-heading, $font-size-lg, $font-weight-medium, 1.25, $color-text-primary);
 
     @include desktop {
       font-size: 2.7rem;
@@ -133,9 +119,8 @@
   }
 
   &__author {
-    font-family: $font-body;
-    font-size: $font-size-sm;
+    @include font($font-body, $font-size-sm, $font-weight-regular, normal, $color-text-secondary);
+
     font-style: normal;
-    color: #7d7894;
   }
 }
