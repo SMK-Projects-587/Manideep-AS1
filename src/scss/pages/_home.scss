@@ -130,11 +130,13 @@
 }
 
 .moods {
-  padding-block: $space-lg;
   padding-inline: $space-md;
+  padding-top: $space-lg;
+  padding-bottom: 4.8rem;
+  border-bottom: 1px solid $color-border;
 
   &__title {
-    @include font($font-heading, $font-size-lg, $font-weight-regular, 1.2, $color-text-primary);
+    @include font($font-heading, $font-size-xl, $font-weight-regular, 1.2, $color-text-primary);
 
     margin-bottom: $space-lg;
   }
@@ -182,5 +184,146 @@
 
   &__count {
     @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+  }
+}
+
+.quotes {
+  padding-block: $space-lg;
+  padding-inline: $space-md;
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  @include desktop {
+    padding-inline: 0;
+  }
+
+  &__header {
+    @include flex(row, space-between, center);
+
+    width: 100%;
+    margin-bottom: $space-lg;
+  }
+
+  &__title {
+    @include font(
+      $font-heading,
+      $font-size-lg,
+      $font-weight-regular,
+      $quotes-skeleton-line-height,
+      $color-text-primary
+    );
+
+    @include desktop {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__shuffle {
+    font-weight: $font-weight-regular;
+    background-color: $color-white;
+  }
+
+  &__shuffle-icon {
+    display: block;
+    width: 6.3rem;
+    height: auto;
+
+    @include desktop {
+      width: $quotes-shuffle-icon-width;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: $space-lg;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    @include flex(column);
+
+    min-height: $quotes-card-desktop-min-height;
+    padding: $space-lg;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+
+    // Mobile: show only first 3 cards
+    &:nth-child(n + 4) {
+      display: none;
+    }
+
+    @include desktop {
+      min-height: $quotes-card-desktop-min-height;
+
+      // Desktop: show all 6 cards
+      &:nth-child(n + 4) {
+        display: flex;
+      }
+    }
+  }
+
+  &__figure {
+    @include flex(column);
+
+    height: 100%;
+  }
+
+  &__text {
+    @include font($font-heading, $font-size-lg, $font-weight-regular, 1.4, $color-text-primary);
+
+    margin-bottom: $space-lg;
+  }
+
+  &__footer {
+    @include flex(row, space-between, center);
+
+    margin-top: auto;
+  }
+
+  &__author {
+    @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+
+    font-style: normal;
+  }
+
+  // Loading state
+  &__card--loading {
+    pointer-events: none;
+
+    @include flex(column, flex-start, stretch);
+  }
+
+  &__skeleton {
+    background-color: $quotes-skeleton-color;
+    border-radius: 999px;
+  }
+
+  &__skeleton--line {
+    width: 100%;
+    height: $quotes-skeleton-line-height;
+    margin-bottom: $space-sm;
+  }
+
+  &__skeleton--line-short {
+    width: 78%;
+  }
+
+  &__skeleton--author {
+    width: $quotes-skeleton-author-width;
+    height: $quotes-skeleton-line-height;
+  }
+
+  &__skeleton--tag {
+    width: $quotes-skeleton-author-width;
+    height: $quotes-skeleton-line-height;
+  }
+
+  // Loading footer needs fixed spacing
+  &__card--loading &__footer {
+    margin-top: 3rem;
   }
 }
