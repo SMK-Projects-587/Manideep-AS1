@@ -273,7 +273,7 @@
   }
 
   &__text {
-    @include font($font-heading, $font-size-lg, $font-weight-regular, 1.4, $color-text-primary);
+    @include font($font-heading, $font-size-md, $font-weight-regular, 1.4, $color-text-primary);
 
     margin-bottom: $space-lg;
   }
