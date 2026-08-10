@@ -1,7 +1,13 @@
 const quotesContent = document.querySelector('.quotes__content');
 const shuffleButton = document.querySelector('.quotes__shuffle');
-
+const CATEGORIES = ['motivation', 'wisdom', 'humour', 'love'];
 const API_URL = 'https://dummyjson.com/quotes/random/6';
+
+function getRandomCategory() {
+  const randomIndex = Math.floor(Math.random() * CATEGORIES.length);
+
+  return CATEGORIES[randomIndex];
+}
 
 function renderLoading() {
   quotesContent.innerHTML = Array(6)
@@ -30,7 +36,6 @@ function renderQuotes(quotes) {
     .map((quote) => {
       return `
         <article class="quotes__card">
-
           <figure class="quotes__figure">
 
             <blockquote class="quotes__text">
@@ -41,10 +46,13 @@ function renderQuotes(quotes) {
               <cite class="quotes__author">
                 ${quote.author}
               </cite>
+
+              <span class="quotes__tag">
+                ${getRandomCategory()}
+              </span>
             </figcaption>
 
           </figure>
-
         </article>
       `;
     })

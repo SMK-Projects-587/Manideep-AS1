@@ -278,6 +278,14 @@
     margin-bottom: $space-lg;
   }
 
+  &__tag {
+    @include font($font-body, $font-size-xs, $font-weight-regular, 1.2, $color-primary);
+
+    padding: 0.6rem 1.4rem;
+    background-color: $color-quote-icon;
+    border-radius: 999px;
+  }
+
   &__footer {
     @include flex(row, space-between, center);
 
@@ -292,8 +300,6 @@
 
   // Loading state
   &__card--loading {
-    pointer-events: none;
-
     @include flex(column, flex-start, stretch);
   }
 
