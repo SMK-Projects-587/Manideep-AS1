@@ -336,8 +336,7 @@
 }
 
 .footer {
-  padding-block: $space-sm;
-  padding-inline: $space-md;
+  padding: $space-sm $space-md;
   background-color: $color-surface;
 
   &__brand {
@@ -346,10 +345,7 @@
   }
 
   &__logo {
-    display: flex;
-    gap: $space-sm;
-    align-items: center;
-
+    @include flex(row, flex-start, center, $space-sm);
     @include font($font-heading, $font-size-lg, $font-weight-regular, 1.2, $color-text-primary);
   }
 
@@ -371,7 +367,11 @@
   &__link {
     @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
 
-    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $color-text-primary;
+    }
   }
 
   &__bottom {
@@ -385,13 +385,8 @@
   }
 
   @include desktop {
-    padding-inline: 0;
-
     &__content {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-between;
+      @include flex(row, space-between, flex-start);
     }
 
     // Show the description on desktop
