@@ -1,0 +1,148 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.quotes {
+  padding-inline: $space-md;
+  padding-top: $space-lg;
+  padding-bottom: $space-xl;
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  @include desktop {
+    padding-inline: 0;
+  }
+
+  &__header {
+    @include flex(row, space-between, center);
+
+    width: 100%;
+    margin-bottom: $space-lg;
+  }
+
+  &__title {
+    @include font(
+      $font-heading,
+      $font-size-lg,
+      $font-weight-regular,
+      $quotes-skeleton-line-height,
+      $color-text-primary
+    );
+
+    @include desktop {
+      font-size: 3.2rem;
+    }
+  }
+
+  &__shuffle {
+    @include flex(row, center, center, $space-xs);
+    @include font($font-body, $font-size-xs, $font-weight-regular, 1.5, #4a3bc4);
+
+    padding: 0.8rem 2rem;
+    background-color: $color-white;
+
+    &-icon {
+      font-size: $font-size-md;
+      line-height: 1;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: $space-lg;
+
+    @include desktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__card {
+    @include flex(column);
+
+    min-height: $quotes-card-desktop-min-height;
+    padding: $space-lg;
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: $radius-xl;
+
+    // Mobile: show only first 3 cards
+    &:nth-child(n + 4) {
+      display: none;
+    }
+
+    @include desktop {
+      min-height: $quotes-card-desktop-min-height;
+
+      // Desktop: show all 6 cards
+      &:nth-child(n + 4) {
+        display: flex;
+      }
+    }
+  }
+
+  &__figure {
+    @include flex(column);
+
+    height: 100%;
+  }
+
+  &__text {
+    @include font($font-heading, $font-size-md, $font-weight-regular, 1.4, $color-text-primary);
+
+    margin-bottom: $space-lg;
+  }
+
+  &__tag {
+    @include font($font-body, $font-size-xs, $font-weight-regular, 1.2, $color-primary);
+
+    padding: 0.6rem 1.4rem;
+    background-color: $color-quote-icon;
+    border-radius: $radius-pill;
+  }
+
+  &__footer {
+    @include flex(row, space-between, center);
+
+    margin-top: auto;
+  }
+
+  &__author {
+    @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+
+    font-style: normal;
+  }
+
+  // Loading state
+  &__card--loading {
+    @include flex(column, flex-start, stretch);
+  }
+
+  &__skeleton-line {
+    width: 100%;
+    height: $quotes-skeleton-line-height;
+    margin-bottom: $space-sm;
+    background-color: $quotes-skeleton-color;
+    border-radius: $radius-pill;
+
+    &--short {
+      width: 78%;
+    }
+  }
+
+  &__skeleton-author {
+    width: $quotes-skeleton-author-width;
+    height: $quotes-skeleton-line-height;
+    background-color: $quotes-skeleton-color;
+    border-radius: $radius-pill;
+  }
+
+  &__skeleton-tag {
+    width: $quotes-skeleton-author-width;
+    height: $quotes-skeleton-line-height;
+    background-color: $quotes-skeleton-color;
+    border-radius: $radius-pill;
+  }
+
+  &__card--loading &__footer {
+    margin-top: 3rem;
+  }
+}

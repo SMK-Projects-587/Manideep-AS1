@@ -15,14 +15,14 @@ function renderLoading() {
       `
       <article class="quotes__card quotes__card--loading">
 
-        <div class="quotes__skeleton quotes__skeleton--line"></div>
+        <div class="quotes__skeleton-line"></div>
 
-        <div class="quotes__skeleton quotes__skeleton--line quotes__skeleton--line-short"></div>
+        <div class="quotes__skeleton-line quotes__skeleton-line--short"></div>
 
         <div class="quotes__footer">
-          <div class="quotes__skeleton quotes__skeleton--author"></div>
+          <div class="quotes__skeleton-author"></div>
 
-          <div class="quotes__skeleton quotes__skeleton--tag"></div>
+          <div class="quotes__skeleton-tag"></div>
         </div>
 
       </article>
@@ -70,8 +70,6 @@ async function fetchQuotes() {
     }
 
     const quotes = await response.json();
-
-    console.log(quotes);
 
     renderQuotes(quotes);
   } catch (error) {
