@@ -130,11 +130,12 @@
 }
 
 .moods {
-  padding-block: $space-lg;
-  padding-inline: $space-md;
+  padding: $space-md $space-lg;
+  padding-bottom: 4.8rem;
+  border-bottom: 1px solid $color-border;
 
   &__title {
-    @include font($font-heading, $font-size-lg, $font-weight-regular, 1.2, $color-text-primary);
+    @include font($font-heading, $font-size-xl, $font-weight-regular, 1.2, $color-text-primary);
 
     margin-bottom: $space-lg;
   }
@@ -182,5 +183,105 @@
 
   &__count {
     @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+  }
+}
+
+.footer {
+  padding-block: $space-sm;
+  padding-inline: $space-md;
+  background-color: $color-surface;
+
+  &__brand {
+    padding-top: $space-md;
+    margin-bottom: $space-sm;
+  }
+
+  &__logo {
+    display: flex;
+    gap: $space-sm;
+    align-items: center;
+
+    @include font($font-heading, $font-size-lg, $font-weight-regular, 1.2, $color-text-primary);
+  }
+
+  &__description {
+    display: none;
+  }
+
+  &__mobile-nav {
+    display: flex;
+    gap: $space-md;
+    margin-bottom: $space-sm;
+  }
+
+  &__links {
+    display: none;
+    padding-top: $space-md;
+  }
+
+  &__link {
+    @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+
+    text-decoration: none;
+  }
+
+  &__bottom {
+    padding-top: 0;
+  }
+
+  &__copyright {
+    @include font($font-body, $font-size-sm, $font-weight-regular, 1.5, $color-text-secondary);
+
+    margin: 0;
+  }
+
+  @include desktop {
+    padding-inline: 0;
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    // Show the description on desktop
+    &__description {
+      display: block;
+      margin-top: $space-sm;
+      font-family: $font-body;
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+    }
+
+    // Hide mobile navigation
+    &__mobile-nav {
+      display: none;
+    }
+
+    // Show desktop navigation
+    &__links {
+      display: flex;
+      gap: 6rem;
+      margin-right: 6rem;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: $space-sm;
+    }
+
+    &__heading {
+      @include font($font-body, $font-size-sm, $font-weight-medium, 1.5, $color-text-primary);
+
+      margin: 0 0 $space-xs;
+    }
+
+    &__bottom {
+      padding-top: $space-md;
+      margin-top: $space-lg;
+      border-top: 1px solid $color-border;
+    }
   }
 }

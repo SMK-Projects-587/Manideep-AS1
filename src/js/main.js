@@ -1,4 +1,5 @@
 import '../scss/main.scss';
+import './quotes.js';
 
 import hamIcon from '../assets/ham.svg';
 import closeIcon from '../assets/close.svg';
